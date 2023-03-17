@@ -1,3 +1,8 @@
+:root{
+    --colortheme: black;
+    --bgtheme: white;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -11,6 +16,7 @@ img{
 
 .container {
     display: flex;
+    flex-direction: column;
 }
 
 .sidebar {
@@ -80,6 +86,13 @@ input[type="radio"] {
     height: 15px;
 }
 
+.display{
+    display: block;
+}
+
+.displayNone{
+    display: none;
+}
 .radio-select {
     display: flex;
     align-items: center;
@@ -96,25 +109,99 @@ input[type="radio"] {
 .topContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     font-size: 11px;
-    gap: 30px
+    gap: 10px;
+    justify-content: center;
 }
 
 .cardContainer{
-    flex-basis: 30%;
+    flex-basis: 17%;
+    border: 1px solid lightgrey;
+    padding: 0 20px;
+    position: relative;
+    color: var(--colortheme);
+    background-color: var(--bgtheme);
+
+}
+
+.basicDetails{
+    display: flex;
+    align-items: center;
+    flex-basis: 70%;
 }
 
 .avatar{
     border-radius: 100%;
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
 }
 
 .avatar img {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
 }
+
+.fullName{
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.date{
+    font-size: 13px;
+}
+
+.profileDetails{
+    height: 100px;
+    margin-top: 20px;
+}
+
+.postPhoto{
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+.postPhoto img{
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.caption{
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+hr{
+    margin-top: 25px;
+
+    margin-bottom: 70px;
+
+}
+
+.heartContainer{
+    position: absolute;
+    bottom: 23px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+}
+
+.heart{
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
 
 #loadMore{
     display: flex;
@@ -125,8 +212,19 @@ input[type="radio"] {
     display: inline-block;
     color: #ffffff;
     background-color: rgb(8,127,250);
-    font-size: 11px;
+    font-size: 18px;
     border: none;
     border-radius: 10px;
     padding: 9px 20px;
+    margin-top: 20px;
+}
+
+:root:has(input[value="darkTheme"]:checked){
+    --colortheme: '#ffffff';
+    --bgtheme: 'black';
+}
+
+:root:has(input[value="darkTheme"]:checked){
+    --colortheme: #ffffff;
+    --bgtheme: black;
 }
